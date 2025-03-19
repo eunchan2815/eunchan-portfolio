@@ -1,16 +1,16 @@
 import Introduce from "./components/Introduce"
 import Iphone from "./components/Iphone"
+import Project from "./components/project"
 
 function App() {
   return (
-    <div className="flex-row">
-      <Introduce/>
-      <div className="flex justify-end p-14">
+      <div className="flex justify-between p-30">
+        <div>
+          <Introduce/>
+          <Project/>
+        </div>
         <Iphone/>
       </div>
-
-
-    </div>
   )
 }
 

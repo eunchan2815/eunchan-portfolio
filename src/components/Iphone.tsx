@@ -23,36 +23,38 @@ const dockIcon = [
   { img: instagramIcon, name: 'Instagram', onClick: () => window.open('https://www.instagram.com/eunchan_chan_cham/')},
 ];
 
-const Iphone: React.FC<IphoneProps> = ({ onTopIconClick }) => {
+const Iphone = ({ onTopIconClick }: IphoneProps ) => {
   return (
-    <div className="relative w-fit">
-      <img src={iphone} alt="iPhone" className="w-full" />
+    <div className='sticky top-0 h-[604px]'>
+      <div className="relative w-fit h-[1054px]">
+        <img src={iphone} alt="iPhone"/>
+        <div className="absolute top-30 left-0 right-0 mx-auto w-4/5 px-6">
+          <div className="grid grid-cols-4 gap-4">
+            {topIcon.map((icon, index) => (
+              <div key={index} className="flex flex-col items-center space-y-1"
+              onClick={() => onTopIconClick && onTopIconClick(icon.name)}
+              >
+                <img src={icon.img} className="w-15 h-15" alt={icon.name}/>
+                <span className="text-xs font-medium text-white">{icon.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>ㅂ
 
-      <div className="absolute top-30 left-0 right-0 mx-auto w-4/5 px-6">
-        <div className="grid grid-cols-4 gap-4">
-          {topIcon.map((icon, index) => (
-            <div key={index} className="flex flex-col items-center space-y-1"
-            onClick={() => onTopIconClick && onTopIconClick(icon.name)}
-            >
-              <img src={icon.img} className="w-15 h-15" alt={icon.name}/>
-              <span className="text-xs font-medium text-white">{icon.name}</span>
-            </div>
-          ))}
-        </div>
-      </div>ㅂ
-
-      <div className="absolute bottom-25 left-0 right-0 mx-auto w-4/5 px-6">
-        <div className="grid grid-cols-4 gap-4">
-          {dockIcon.map((icon, index) => (
-            <div key={index} className="flex flex-col items-center space-y-1">
-              <img src={icon.img} className="w-15 h-15" 
-              onClick={icon.onClick}
-              />
-            </div>
-          ))}
+        <div className="absolute bottom-19 left-0 right-0 mx-auto w-4/5 px-6">
+          <div className="grid grid-cols-4 gap-4">
+            {dockIcon.map((icon, index) => (
+              <div key={index} className="flex flex-col items-center space-y-1">
+                <img src={icon.img} className="w-15 h-15" 
+                onClick={icon.onClick}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
+    
   );
 };
 
