@@ -29,7 +29,7 @@ const Iphone = ({ onTopIconClick }: IphoneProps ) => {
       <div className="relative w-fit h-[1054px]">
         <img src={iphone} alt="iPhone"/>
         <div className="absolute top-30 left-0 right-0 mx-auto w-4/5 px-6">
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-4 gap-6">
             {topIcon.map((icon, index) => (
               <div key={index} className="flex flex-col items-center space-y-1"
               onClick={() => onTopIconClick && onTopIconClick(icon.name)}
@@ -38,10 +38,18 @@ const Iphone = ({ onTopIconClick }: IphoneProps ) => {
                 <span className="text-xs font-medium text-white">{icon.name}</span>
               </div>
             ))}
+            {dockIcon.map((icon, index) => (
+              <div key={index} className="flex flex-col items-center space-y-1">
+                <img src={icon.img} className="w-15 h-15"
+                onClick={icon.onClick}
+                />
+                <span className="text-xs font-medium text-white">{icon.name}</span>
+              </div>
+            ))}
           </div>
         </div>ㅂ
 
-        <div className="absolute bottom-19 left-0 right-0 mx-auto w-4/5 px-6">
+        {/* <div className="absolute bottom-19 left-0 right-0 mx-auto w-4/5 px-6">
           <div className="grid grid-cols-4 gap-4">
             {dockIcon.map((icon, index) => (
               <div key={index} className="flex flex-col items-center space-y-1">
@@ -51,7 +59,7 @@ const Iphone = ({ onTopIconClick }: IphoneProps ) => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
     

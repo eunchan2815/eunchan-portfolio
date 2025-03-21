@@ -4,7 +4,7 @@ import DodamPreview2 from '../assets/DodamPreview2.svg'
 import Divider from './Divider';
 import OpenButton from './OpenButton';
 
-const Project = () => {
+const B1ND = () => {
   return (
     <div>
       <div className="flex flex-col gap-6 text-white py-24 px-6">
@@ -61,4 +61,4 @@ const Project = () => {
   )
 }
 
-export default Project
+export default B1ND
